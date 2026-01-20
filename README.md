@@ -36,7 +36,7 @@ LLM-as-judge approaches fail for agent trajectories because:
 3. **Safety nuance** — Distinguishing clever from dangerous requires judgment
 4. **Error propagation** — One bad step cascades; humans catch root causes
 
-**Mercor's 30,000+ expert network is the moat.** The annotation tooling is the leverage.
+**Expert network is the moat.** The annotation tooling is the leverage.
 
 ---
 
@@ -77,39 +77,6 @@ The demo includes an **intentionally suboptimal decision** at Step 6:
 - **Clear visual hierarchy** — Status indicators, color-coded sections, progress tracking
 
 ---
-
-## What Makes This Different
-
-### vs. Scale AI / Surge AI
-
-| Generic Labeling Tools | AgentEval |
-|-----------------------|-----------|
-| Built for image/text classification | Built for sequential reasoning |
-| Flat annotation schemas | Hierarchical: step → trajectory → rubric |
-| No temporal context | Full trajectory context at every step |
-| One-size-fits-all UI | Purpose-built for agent evaluation |
-
-### vs. Internal Lab Tools
-
-| Internal Tools | Mercor + AgentEval |
-|---------------|-------------------|
-| Single-lab expertise | Cross-lab expert network |
-| Engineers build annotation UI | Product-focused UX |
-| Recruiting is a distraction | Talent is the core competency |
-
-### vs. LLM-as-Judge
-
-| Automated Evaluation | Human Expert Evaluation |
-|---------------------|------------------------|
-| Fast, cheap, scalable | Slower but catches what matters |
-| Misses subtle errors | Finds the "this feels wrong" moments |
-| Can't verify real-world grounding | Brings domain expertise |
-| Good for filtering | Essential for training signal |
-
-**The winning approach:** Use LLM-as-judge for initial filtering, human experts for training data.
-
----
-
 ## Product Vision: Full Implementation Roadmap
 
 ### Phase 1: Core Annotation Platform (This Demo)
@@ -119,14 +86,11 @@ The demo includes an **intentionally suboptimal decision** at Step 6:
 - [x] Clean 3-panel responsive layout
 - [x] Welcome modal with workflow guidance
 - [x] Demo highlighting (Step 6 visual cue)
-- [ ] Keyboard shortcuts for power users
 - [ ] Screenshot/recording viewer for browser agents
 
 ### Phase 2: Quality & Scale Infrastructure
-- [ ] **Inter-annotator agreement tracking** — Measure consistency across experts
 - [ ] **Calibration tasks** — Gold-standard trajectories for annotator training
 - [ ] **Dispute resolution workflow** — Handle edge cases systematically
-- [ ] **Batch assignment system** — Distribute work based on expertise and availability
 - [ ] **Quality scoring per annotator** — Track reliability over time
 
 ### Phase 3: Intelligence Layer
@@ -137,7 +101,6 @@ The demo includes an **intentionally suboptimal decision** at Step 6:
 
 ### Phase 4: Lab Integration
 - [ ] **Trajectory ingestion API** — Accept trajectories from any agent framework
-- [ ] **Export formats** — JSONL, preference pairs, reward model training format
 - [ ] **Feedback loops** — Push annotations back to training pipelines
 - [ ] **Custom rubric builder** — Labs define their own evaluation criteria
 
@@ -152,37 +115,9 @@ The demo includes an **intentionally suboptimal decision** at Step 6:
 | **Annotator retention** | Network health |
 | **Quality score distribution** | Catch training issues early |
 
----
-
-## Why This Fits the PM Role
-
-This demo demonstrates:
-
-| Role Requirement | Evidence |
-|-----------------|----------|
-| **"Build interfaces that reduce AHT"** | Streamlined 3-panel UI, side-by-side context, targeted annotation workflow |
-| **"Scale production of frontier data types"** | Agent trajectories are the frontier data type for reasoning models |
-| **"Technical fluency, build MVPs"** | Built this end-to-end: Next.js, TypeScript, component architecture |
-| **"Strategic vision"** | Full product roadmap from demo to platform |
-| **"Balance metrics & vision"** | Quality tracking + long-term platform thinking |
-| **"High ownership"** | Problem → Solution → Demo → Roadmap, end-to-end |
-
-### The Core Insight
-
-Mercor's value is the **expert network**. The product opportunity is **tooling that makes that network maximally effective**.
-
 Every 5 seconds saved per annotation × 30,000 experts × thousands of annotations = massive leverage.
 
 ---
-
-## Technical Details
-
-### Stack
-- **Framework:** Next.js 15+ (App Router)
-- **Language:** TypeScript (strict mode)
-- **Styling:** Tailwind CSS + shadcn/ui
-- **State:** React hooks with optimistic updates
-- **Brand:** Mercor colors (#7068fc, #4838c8)
 
 ### Running Locally
 
@@ -277,17 +212,3 @@ interface RubricScoreData {
 - `creative_solution` — Novel approach to the problem
 - `recovery_success` — Good recovery from previous error
 
----
-
-## Next Steps
-
-1. **Try the demo** — Click through the steps, especially Step 6 (highlighted with "Demo" badge)
-2. **Test the annotation flow** — Rate steps, add flags, write notes
-3. **Explore the rubric** — Understand weighted evaluation criteria
-4. **Imagine at scale** — 30,000 experts, millions of trajectories
-
----
-
-*Built as a product demonstration for Mercor's Applied AI PM role.*
-
-*The future of AI isn't just about building smarter models—it's about building the infrastructure that lets human expertise flow into those models efficiently. This is that infrastructure.*
