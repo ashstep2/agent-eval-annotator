@@ -1,9 +1,6 @@
 # AgentEval: Multi-Turn Agent Trajectory Annotation System
 
 > **TL;DR:** An annotation interface that helps human experts evaluate AI agent decision-making step-by-step, with a streamlined UI optimized for annotation quality and efficiency.
-
-> **For Mercor:** This demo directly addresses the PM scope of *"building interfaces that reduce AHT for thousands of experts"* and *"scaling production of frontier data types."*
-
 ---
 
 ## What This Is
@@ -135,7 +132,7 @@ src/
 ├── app/                        # Next.js app router
 │   ├── layout.tsx              # Root layout with fonts
 │   ├── page.tsx                # Main annotation page
-│   └── globals.css             # Tailwind + Mercor brand colors
+│   └── globals.css          
 ├── components/
 │   ├── annotation/             # Core annotation UI
 │   │   ├── StepTimeline.tsx    # Left panel - step navigation with demo highlight
@@ -143,7 +140,7 @@ src/
 │   │   ├── RubricPanel.tsx     # Right panel - rubric scoring
 │   │   └── index.ts            # Barrel export
 │   ├── brand/
-│   │   └── MercorLogo.tsx      # Mercor logo component
+│   │   └── MercorLogo.tsx
 │   ├── onboarding/
 │   │   ├── WelcomeModal.tsx    # Single-screen welcome with workflow guide
 │   │   └── index.ts            # Barrel export
